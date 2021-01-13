@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { SiteContext } from './_app';
 import { useContext } from 'react';
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function Home(props) {
   const siteContext = useContext(SiteContext);
@@ -10,7 +10,7 @@ export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Create Next App - Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -19,7 +19,7 @@ export default function Home(props) {
           Welcome to <a href="https://nextjs.org">Next.js!</a> Site Id {siteContext.siteId}
         </h1>
 
-        <Link href="/blog"><a>Blog</a></Link>
+        <Link href="/"><a>Home</a></Link>
 
         Props from getServerSideProps: {props.pageProp}
 
@@ -29,5 +29,5 @@ export default function Home(props) {
 }
 
 export const getServerSideProps = async () => {
-  return { props: { pageProp: 'Hello World' } };
+  return { props: { pageProp: 'Hello Blog' } };
 }
